@@ -4,10 +4,10 @@ import UsersList from "../components/UsersList";
 const Users = () => {
   const USERS = [
     {
-      id: "ui",
+      id: "u1",
       name: "Tanvir Ahmed",
       image:
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fprofile%2520picture%2F&psig=AOvVaw29m1LgIUV8gGcX8fuNYs2K&ust=1639482569652000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNji7tba4PQCFQAAAAAdAAAAABAD",
+        "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       places: 3,
     },
   ];

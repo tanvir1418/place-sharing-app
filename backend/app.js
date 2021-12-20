@@ -8,5 +8,5 @@ const app = express();
 app.use("/api/places", placesRoutes);
 
 app.listen(5000, () => {
-  console.log("SERVER running at post 5000");
+  console.log("SERVER running at http://localhost:5000/");
 });

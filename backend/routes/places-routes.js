@@ -1,5 +1,4 @@
 const express = require("express");
-const { route } = require("express/lib/router");
 
 const placeControllers = require("../controllers/places-controllers");
 

@@ -1,3 +1,5 @@
+const { v4: uuidv4 } = require("uuid");
+
 const HttpError = require("../models/http-error");
 
 const DUMMY_PLACES = [
@@ -6,8 +8,6 @@ const DUMMY_PLACES = [
     title: "Shat Gambuj Mosque",
     description:
       "Shat Gambuj Masjid or the Sixty Dome Mosque resides in the city of mosque, Bagerhat of Khulna division. It’s the largest mosque in Bangladesh and registered under the UNESCO World Heritage Site.",
-    imageUrl:
-      "https://www.gosahin.com/go/p/j/1577910315_sixty-dome-moque-1.jpg",
     address: "Bagerhat - Khulna Rd, 9300",
     creator: "u1",
     location: {
@@ -20,7 +20,6 @@ const DUMMY_PLACES = [
     title: "Lalbagh Fort",
     description:
       "This famous historic place is situated on the northeast side of Dhaka, Bangladesh. This was built during the Mughal rule, on seventeenth century.",
-    imageUrl: "https://live.staticflickr.com/4228/34129364493_4b3e4bb0ba_b.jpg",
     address: "Lalbagh Rd, Dhaka 1211",
     creator: "u2",
     location: {
@@ -33,7 +32,6 @@ const DUMMY_PLACES = [
     title: "Ahsan Manzil",
     description:
       "This is the heritage building of the then jamindar of Jamalpur. It was built during the late eighteenth century by Sheik Enayet Ullah.",
-    imageUrl: "https://live.staticflickr.com/65535/7707182500_947e915528_b.jpg",
     address: "Ahsanullah Rd, Dhaka 1100",
     creator: "u3",
     location: {
@@ -73,5 +71,23 @@ const getPlaceByUserId = (req, res, next) => {
   res.json({ place });
 };
 
+const createPlace = (req, res, next) => {
+  const { title, description, coordinates, address, creator } = req.body;
+
+  const createdPlace = {
+    id: uuidv4(),
+    title,
+    description,
+    location: coordinates,
+    address,
+    creator,
+  };
+
+  DUMMY_PLACES.push(createdPlace);
+
+  res.status(201).json({ place: createdPlace });
+};
+
 exports.getPlaceById = getPlaceById;
 exports.getPlaceByUserId = getPlaceByUserId;
+exports.createPlace = createPlace;

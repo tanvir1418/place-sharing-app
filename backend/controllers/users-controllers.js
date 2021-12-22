@@ -1,29 +1,7 @@
-const { v4: uuidv4 } = require("uuid");
 const { validationResult } = require("express-validator");
 
 const HttpError = require("../models/http-error");
 const User = require("../models/user");
-
-const DUMMY_USERS = [
-  {
-    id: "u1",
-    name: "Tanvir Ahmed",
-    email: "tanvirahmed1418@gmail.com",
-    password: "123456",
-  },
-  {
-    id: "u2",
-    name: "Muntasir Ahmed",
-    email: "muntasirahmed2179@gmail.com",
-    password: "123123",
-  },
-  {
-    id: "u3",
-    name: "Nazmul Shohag",
-    email: "shohag237@gmail.com",
-    password: "222444",
-  },
-];
 
 const getUsers = async (req, res, next) => {
   let users;
@@ -42,7 +20,6 @@ const getUsers = async (req, res, next) => {
 const signup = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    console.log(errors);
     return next(
       new HttpError("Invalid inputs passed, please check your data", 422)
     );

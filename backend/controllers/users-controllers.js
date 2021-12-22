@@ -48,7 +48,7 @@ const signup = async (req, res, next) => {
     );
   }
 
-  const { name, email, password, places } = req.body;
+  const { name, email, password } = req.body;
 
   let existingUser;
   try {
@@ -74,7 +74,7 @@ const signup = async (req, res, next) => {
     email,
     image: "https://www.gosahin.com/go/p/j/1577910315_sixty-dome-moque-1.jpg",
     password,
-    places,
+    places: [],
   });
 
   try {

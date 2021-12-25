@@ -49,7 +49,7 @@ const signup = async (req, res, next) => {
   const createdUser = new User({
     name,
     email,
-    image: "https://www.gosahin.com/go/p/j/1577910315_sixty-dome-moque-1.jpg",
+    image: req.file.path,
     password,
     places: [],
   });

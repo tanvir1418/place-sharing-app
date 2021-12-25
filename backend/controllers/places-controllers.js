@@ -80,7 +80,7 @@ const createPlace = async (req, res, next) => {
     description,
     address,
     location: coordinates,
-    image: "https://www.gosahin.com/go/p/j/1577910315_sixty-dome-moque-1.jpg",
+    image: req.file.path,
     creator,
   });
 

@@ -2,13 +2,32 @@ const axios = require("axios");
 
 const HttpError = require("../models/http-error");
 
-const API_KEY = "AIzaSyBbegHJ_Pou6C7FHrgyQYJgciWIKFWgTys";
+const API_TOKEN = process.env.MAPBOX_API_TOKEN;
 
 async function getCoordsForAddress(address) {
+  const response = await axios.get(
+    `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
+      address
+    )}.json?limit=2&access_token=${API_TOKEN}`
+  );
+  const data = response.data.features[0].center;
+
+  if (!data) {
+    const error = new HttpError(
+      "Could not find location for the specified address.",
+      422
+    );
+    throw error;
+  }
+
+  const longitude = data[0];
+  const latitude = data[1];
+
   return {
-    lat: 22.6745068,
-    lng: 89.7418359,
+    lat: latitude,
+    lng: longitude,
   };
+
   // billing enable is needed for this geocoding API access
 
   //   const response = await axios.get(

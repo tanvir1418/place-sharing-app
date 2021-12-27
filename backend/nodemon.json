@@ -1,0 +1,9 @@
+{
+    "env": {
+        "DB_USER": "tanvir_place_share",
+        "DB_PASSWORD": "placeshare123",
+        "DB_NAME": "places",
+        "MAPBOX_API_TOKEN": "pk.eyJ1IjoidGFudmlyMTQxOCIsImEiOiJja3hvY21maTcyaGg2MndramU1azMzM2NoIn0.UrwMYtjpT1Liu_q7m-RiTw",
+        "JWT_KEY": "supersecret_dont_share"
+    }
+}

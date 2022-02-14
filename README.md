@@ -20,18 +20,4 @@
 
 📷 Screen Shots:
 
-## **Home:**
-
-![SharePlace: PlaceInfo](./readme/home-page.png)
-
-## **Place Information:**
-
-![Markdown Logo](./readme/place-info.png)
-
-## **Registration:**
-
-![Markdown Logo](./readme/registration.png)
-
-## **Add Place:**
-
-![Markdown Logo](./readme/add-place.png)
+![SharePlace](./readme/share-places-screens.gif)

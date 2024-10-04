@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "share-places-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -26,6 +26,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/", (req, res, next) => {
+  res.json({ message: "Hello from the server!" });
+});
+
 app.use("/api/places", placesRoutes);
 app.use("/api/users", usersRoutes);
 
